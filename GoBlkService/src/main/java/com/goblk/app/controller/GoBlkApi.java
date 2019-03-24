@@ -1,5 +1,7 @@
 package com.goblk.app.controller;
 
+import java.util.Set;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.ResponseEntity;
@@ -15,4 +17,7 @@ public interface GoBlkApi {
 
 	@RequestMapping(value ="data/{query}", method = RequestMethod.GET)
 	ResponseEntity<String> getShortcutMap(@PathVariable("query") String query, HttpServletRequest request);
+	
+	@RequestMapping(value ="loadHelp", method = RequestMethod.GET)
+	ResponseEntity<Set<String>> loadHelp(HttpServletRequest request);
 }

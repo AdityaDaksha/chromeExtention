@@ -4,7 +4,9 @@
 package com.goblk.app.controller;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -64,6 +66,15 @@ public class GoBlkApiController implements GoBlkApi {
 			return new ResponseEntity<>(url, HttpStatus.NOT_FOUND);
 		}
 		return new ResponseEntity<>(url, HttpStatus.OK);
+	}
+	
+	@Override
+	public ResponseEntity<Set<String>> loadHelp(HttpServletRequest request) {
+		// TODO Auto-generated method stub
+		Set<String> result = new HashSet<>();
+		result.add("toi");
+		result.add("passport");
+		return new ResponseEntity<>(result, HttpStatus.OK);
 	}
 
 }
